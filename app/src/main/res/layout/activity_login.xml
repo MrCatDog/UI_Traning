@@ -22,29 +22,29 @@
             android:id="@+id/login_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
             android:gravity="center"
             android:text="@string/login_activity_title"
             android:textColor="@color/greenText"
-            android:textSize="@dimen/all_title_size"
-            android:layout_marginTop="@dimen/margin_top_each_elem"/>
+            android:textSize="@dimen/all_title_size" />
 
         <EditText
             android:id="@+id/login_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="username"
             android:hint="@string/login_edittext_hint"
-            android:inputType="textNoSuggestions|textVisiblePassword"
-            android:autofillHints="username" />
+            android:inputType="textNoSuggestions|textVisiblePassword" />
 
         <EditText
             android:id="@+id/pass_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="password"
             android:hint="@string/pass_edittext_hint"
-            android:inputType="textPassword"
-            android:autofillHints="password"/>
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/login_btn"

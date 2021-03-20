@@ -11,8 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/margin_horizontal"
-        >
+        android:paddingHorizontal="@dimen/margin_horizontal">
 
         <TextView
             android:layout_width="match_parent"
@@ -90,27 +89,27 @@
                 android:id="@+id/sex_third"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sex_radio_third"
-                android:checked="true"/>
+                android:checked="true"
+                android:text="@string/sex_radio_third" />
         </RadioGroup>
 
         <EditText
             android:id="@+id/register_about"
             android:layout_width="match_parent"
             android:layout_height="@dimen/register_about_size"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
             android:gravity="top"
             android:hint="@string/about_edittext_hint"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:singleLine="false"
-            android:layout_marginTop="@dimen/margin_top_each_elem" />
+            android:singleLine="false" />
 
         <CheckBox
             android:id="@+id/checkBoxCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/condition_checkbox_text"
-            android:layout_marginTop="@dimen/margin_top_each_elem"/>
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/condition_checkbox_text" />
 
         <Space
             android:layout_width="match_parent"
@@ -122,8 +121,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/confirm_registration"
-            android:enabled="false"/>
+            android:enabled="false"
+            android:text="@string/confirm_registration" />
 
         <Button
             android:id="@+id/back_register"

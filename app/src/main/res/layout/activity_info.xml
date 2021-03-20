@@ -11,15 +11,15 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/margin_horizontal" >
+        android:paddingHorizontal="@dimen/margin_horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
             android:gravity="center"
             android:text="@string/info_activity_title"
             android:textColor="@color/black"
-            android:layout_marginTop="@dimen/margin_top_each_elem"
             android:textSize="@dimen/all_title_size" />
 
         <TextView
@@ -27,42 +27,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_login"/>
+            android:text="@string/info_login" />
 
         <TextView
             android:id="@+id/info_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_pass"/>
+            android:text="@string/info_pass" />
 
         <TextView
             android:id="@+id/info_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_name"/>
+            android:text="@string/info_name" />
 
         <TextView
             android:id="@+id/info_family"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_family"/>
+            android:text="@string/info_family" />
 
         <TextView
             android:id="@+id/info_sex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_sex"/>
+            android:text="@string/info_sex" />
 
         <TextView
             android:id="@+id/info_about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_each_elem"
-            android:text="@string/info_about"/>
+            android:text="@string/info_about" />
 
         <Space
             android:layout_width="match_parent"

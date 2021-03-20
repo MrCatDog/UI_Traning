@@ -20,19 +20,19 @@ public class InfoActivity extends AppCompatActivity {
         Button backBtn = findViewById(R.id.back_info);
         backBtn.setOnClickListener(view -> finish());
         Bundle extras = getIntent().getExtras();
-        if(extras != null) {
+        if (extras != null) {
             login.append(extras.getCharSequence("login"));
             pass.append(extras.getCharSequence("pass"));
-            if(extras.containsKey("name")) {
+            if (extras.containsKey("name")) {
                 name.append(extras.getCharSequence("name"));
             }
-            if(extras.containsKey("family")) {
+            if (extras.containsKey("family")) {
                 family.append(extras.getCharSequence("family"));
             }
-            if(extras.containsKey("sex")) {
+            if (extras.containsKey("sex")) {
                 sex.append(extras.getCharSequence("sex"));
             }
-            if(extras.containsKey("about")) {
+            if (extras.containsKey("about")) {
                 about.append(extras.getCharSequence("about"));
             }
         }

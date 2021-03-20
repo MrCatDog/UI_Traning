@@ -47,30 +47,30 @@ public class RegisterActivity extends AppCompatActivity {
         String pass = passEditText.getText().toString().trim();
         String checkPass = checkPassEditText.getText().toString().trim();
 
-        if(login.isEmpty()) {
+        if (login.isEmpty()) {
             errors = true;
             loginEditText.setError("Не должно быть пустым!");
         }
-        if(login.length() < 4) {
+        if (login.length() < 4) {
             errors = true;
             loginEditText.setError("Слишком короткий!");
         }
 
-        if(pass.isEmpty()) {
+        if (pass.isEmpty()) {
             errors = true;
             passEditText.setError("Не должно быть пустым!");
         }
-        if(pass.length() < 8) {
+        if (pass.length() < 8) {
             errors = true;
             passEditText.setError("Слишком короткий!");
         }
 
-        if(!pass.equals(checkPass)) {
+        if (!pass.equals(checkPass)) {
             errors = true;
             checkPassEditText.setError("Не совпадает!");
         }
 
-        if(errors) {
+        if (errors) {
             return;
         }
 

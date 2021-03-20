@@ -30,15 +30,15 @@ public class LoginActivity extends AppCompatActivity {
         boolean errors = false;
         String login = loginEditText.getText().toString().trim();
         String pass = passEditText.getText().toString().trim();
-        if(login.isEmpty()) {
+        if (login.isEmpty()) {
             errors = true;
             loginEditText.setError("Не должно быть пустым!");
         }
-        if(pass.isEmpty()) {
+        if (pass.isEmpty()) {
             errors = true;
             passEditText.setError("Не должно быть пустым!");
         }
-        if(errors) {
+        if (errors) {
             return;
         }
         Intent infoIntent = new Intent(this, InfoActivity.class);
