@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:gravity="center"
+            android:text="@string/register_activity_title"
+            android:textColor="@color/redText"
+            android:textSize="@dimen/all_title_size" />
+
+        <EditText
+            android:id="@+id/register_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="AUTOFILL_HINT_NEW_USERNAME"
+            android:hint="@string/login_edittext_hint"
+            android:inputType="textNoSuggestions|textVisiblePassword" />
+
+        <EditText
+            android:id="@+id/register_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="AUTOFILL_HINT_NEW_PASSWORD"
+            android:hint="@string/pass_edittext_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/register_check_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="password"
+            android:hint="@string/pass_again_edittext_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="AUTOFILL_HINT_PERSON_NAME"
+            android:hint="@string/name_edittext_hint"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/register_family"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:autofillHints="AUTOFILL_HINT_PERSON_NAME_FAMILY"
+            android:hint="@string/surname_edittext_hint"
+            android:inputType="text" />
+
+        <RadioGroup
+            android:id="@+id/sex_choise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem">
+
+            <RadioButton
+                android:id="@+id/sex_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_radio_first" />
+
+            <RadioButton
+                android:id="@+id/sex_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_radio_second" />
+
+            <RadioButton
+                android:id="@+id/sex_third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_radio_third"
+                android:checked="true"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/register_about"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/register_about_size"
+            android:gravity="top"
+            android:hint="@string/about_edittext_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:singleLine="false"
+            android:layout_marginTop="@dimen/margin_top_each_elem" />
+
+        <CheckBox
+            android:id="@+id/checkBoxCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/condition_checkbox_text"
+            android:layout_marginTop="@dimen/margin_top_each_elem"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/confirm_registration"
+            android:enabled="false"/>
+
+        <Button
+            android:id="@+id/back_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_top_each_elem"
+            android:text="@string/backward_btn_text" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">UI_Training</string>
+    <string name="main_activity_title">Training</string>
+    <string name="enterance_btn_text">Вход</string>
+    <string name="register_btn_text">Регистрация</string>
+    <string name="about_btn_text">О программе</string>
+    <string name="backward_btn_text">Назад</string>
+
+    <string name="login_activity_title">Вход</string>
+    <string name="login_edittext_hint">Логин</string>
+    <string name="pass_edittext_hint">Пароль</string>
+    <string name="login_btn">Войти</string>
+
+    <string name="register_activity_title">Регистрация</string>
+    <string name="pass_again_edittext_hint">Повторите пароль</string>
+    <string name="name_edittext_hint">Имя</string>
+    <string name="surname_edittext_hint">Фамилия</string>
+    <string name="sex_radio_first">Мужчина</string>
+    <string name="sex_radio_second">Женщина</string>
+    <string name="sex_radio_third">Не определилось</string>
+    <string name="about_edittext_hint">Дополнительная информация</string>
+    <string name="condition_checkbox_text">Я принимаю условия</string>
+    <string name="confirm_registration">Зарегестрироваться</string>
+    
+    <string name="info_activity_title">Информация</string>
+    <string name="info_login">Логин:</string>
+    <string name="info_pass">Пароль:</string>
+    <string name="info_name">Имя:</string>
+    <string name="info_family">Фамилия:</string>
+    <string name="info_sex">Пол:</string>
+    <string name="info_about">Дополнительная информация:</string>
+</resources>

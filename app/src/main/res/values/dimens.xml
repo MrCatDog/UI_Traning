@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_horizontal">20dp</dimen>
+    <dimen name="margin_top_each_elem">10dp</dimen>
+    <dimen name="all_title_size">35sp</dimen>
+    <dimen name="register_about_size">200dp</dimen>
+</resources>

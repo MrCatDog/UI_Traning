@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/info_activity_title"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:textSize="@dimen/all_title_size" />
+
+        <TextView
+            android:id="@+id/info_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_login"/>
+
+        <TextView
+            android:id="@+id/info_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_pass"/>
+
+        <TextView
+            android:id="@+id/info_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_name"/>
+
+        <TextView
+            android:id="@+id/info_family"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_family"/>
+
+        <TextView
+            android:id="@+id/info_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_sex"/>
+
+        <TextView
+            android:id="@+id/info_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_each_elem"
+            android:text="@string/info_about"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/back_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_top_each_elem"
+            android:text="@string/backward_btn_text" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
