@@ -101,7 +101,7 @@
             android:gravity="top"
             android:hint="@string/about_edittext_hint"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:singleLine="false" />
 
         <CheckBox

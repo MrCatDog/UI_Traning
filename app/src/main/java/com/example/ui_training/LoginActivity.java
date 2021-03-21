@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText loginEditText;
-    EditText passEditText;
+    private EditText loginEditText;
+    private EditText passEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,18 @@ public class LoginActivity extends AppCompatActivity {
         String pass = passEditText.getText().toString().trim();
         if (login.isEmpty()) {
             errors = true;
-            loginEditText.setError("Не должно быть пустым!");
+            loginEditText.setError(getString(R.string.error_empty));
         }
         if (pass.isEmpty()) {
             errors = true;
-            passEditText.setError("Не должно быть пустым!");
+            passEditText.setError(getString(R.string.error_empty));
         }
         if (errors) {
             return;
         }
         Intent infoIntent = new Intent(this, InfoActivity.class);
-        infoIntent.putExtra("login", login);
-        infoIntent.putExtra("pass", pass);
+        infoIntent.putExtra(InfoActivity.LOGIN, login);
+        infoIntent.putExtra(InfoActivity.PASSWORD, pass);
         startActivity(infoIntent);
     }
 }

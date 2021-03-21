@@ -29,4 +29,8 @@
     <string name="info_family">Фамилия:</string>
     <string name="info_sex">Пол:</string>
     <string name="info_about">Дополнительная информация:</string>
+
+    <string name="error_empty">Не должно быть пустым!</string>
+    <string name="error_too_short">Слишком короткий!</string>
+    <string name="error_pass_dont_match">Пароли не совпадают!</string>
 </resources>

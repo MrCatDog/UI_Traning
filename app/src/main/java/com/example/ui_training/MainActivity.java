@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         aboutProg.setOnClickListener(view -> {
             Intent aboutIntent = new Intent(Intent.ACTION_VIEW);
             aboutIntent.setData(Uri.parse("https://developer.android.com/guide/components/intents-filters"));
-            startActivity(aboutIntent);
+            if(aboutIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(aboutIntent);
+            }
         });
     }
 }

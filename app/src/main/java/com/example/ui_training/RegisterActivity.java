@@ -12,13 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText loginEditText;
-    EditText passEditText;
-    EditText checkPassEditText;
-    EditText nameEditText;
-    EditText familyEditText;
-    EditText aboutEditText;
-    RadioButton sexRadioBtn;
+    private EditText loginEditText;
+    private EditText passEditText;
+    private EditText checkPassEditText;
+    private EditText nameEditText;
+    private EditText familyEditText;
+    private EditText aboutEditText;
+    private RadioGroup sexRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         nameEditText = findViewById(R.id.register_name);
         familyEditText = findViewById(R.id.register_family);
         aboutEditText = findViewById(R.id.register_about);
-        sexRadioBtn = findViewById(((RadioGroup) findViewById(R.id.sex_choise)).getCheckedRadioButtonId());
+        sexRadioGroup = findViewById(R.id.sex_choise);
 
         checkBoxCondition.setOnClickListener(view -> registerButton.setEnabled(!registerButton.isEnabled()));
         registerButton.setOnClickListener(view -> sendIntent());
@@ -46,28 +46,47 @@ public class RegisterActivity extends AppCompatActivity {
         String login = loginEditText.getText().toString().trim();
         String pass = passEditText.getText().toString().trim();
         String checkPass = checkPassEditText.getText().toString().trim();
+        String name = nameEditText.getText().toString().trim();
+        String family = familyEditText.getText().toString().trim();
 
         if (login.isEmpty()) {
             errors = true;
-            loginEditText.setError("Не должно быть пустым!");
-        }
-        if (login.length() < 4) {
-            errors = true;
-            loginEditText.setError("Слишком короткий!");
+            loginEditText.setError(getString(R.string.error_empty));
+        } else {
+            if (login.length() < 4) {
+                errors = true;
+                loginEditText.setError(getString(R.string.error_too_short));
+            }
         }
 
         if (pass.isEmpty()) {
             errors = true;
-            passEditText.setError("Не должно быть пустым!");
-        }
-        if (pass.length() < 8) {
-            errors = true;
-            passEditText.setError("Слишком короткий!");
+            passEditText.setError(getString(R.string.error_empty));
+        } else {
+            if (pass.length() < 8) {
+                errors = true;
+                passEditText.setError(getString(R.string.error_too_short));
+            }
         }
 
-        if (!pass.equals(checkPass)) {
+        if(checkPass.isEmpty()) {
             errors = true;
-            checkPassEditText.setError("Не совпадает!");
+            checkPassEditText.setError(getString(R.string.error_empty));
+        } else {
+            if (!pass.equals(checkPass)) {
+                errors = true;
+                checkPassEditText.setError(getString(R.string.error_pass_dont_match));
+            }
+        }
+
+        if (name.isEmpty()) {
+            errors = true;
+            nameEditText.setError(getString(R.string.error_empty));
+        }
+
+        if (family.isEmpty()) {
+            errors = true;
+            familyEditText.setError(getString(R.string.error_empty));
         }
 
         if (errors) {
@@ -75,12 +94,12 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         Intent infoIntent = new Intent(this, InfoActivity.class);
-        infoIntent.putExtra("login", login);
-        infoIntent.putExtra("pass", pass);
-        infoIntent.putExtra("name", nameEditText.getText().toString().trim());
-        infoIntent.putExtra("family", familyEditText.getText().toString().trim());
-        infoIntent.putExtra("about", aboutEditText.getText().toString().trim());
-        infoIntent.putExtra("sex", sexRadioBtn.getText().toString());
+        infoIntent.putExtra(InfoActivity.LOGIN, login);
+        infoIntent.putExtra(InfoActivity.PASSWORD, pass);
+        infoIntent.putExtra(InfoActivity.NAME, name);
+        infoIntent.putExtra(InfoActivity.FAMILY, family);
+        infoIntent.putExtra(InfoActivity.ABOUT, aboutEditText.getText().toString().trim());
+        infoIntent.putExtra(InfoActivity.SEX, ((RadioButton) findViewById(sexRadioGroup.getCheckedRadioButtonId())).getText().toString());
 
         startActivity(infoIntent);
     }
