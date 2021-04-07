@@ -9,13 +9,19 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button enterBtn;
+    private Button registerBtn;
+    private Button aboutProg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button enterBtn = findViewById(R.id.enter_btn);
-        Button registerBtn = findViewById(R.id.register_btn_main);
-        Button aboutProg = findViewById(R.id.about_btn);
+
+        enterBtn = findViewById(R.id.enter_btn);
+        registerBtn = findViewById(R.id.register_btn_main);
+        aboutProg = findViewById(R.id.about_btn);
+
         enterBtn.setOnClickListener(view -> {
             Intent enterIntent = new Intent(this, LoginActivity.class);
             startActivity(enterIntent);
@@ -27,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         aboutProg.setOnClickListener(view -> {
             Intent aboutIntent = new Intent(Intent.ACTION_VIEW);
             aboutIntent.setData(Uri.parse("https://developer.android.com/guide/components/intents-filters"));
-            if(aboutIntent.resolveActivity(getPackageManager()) != null) {
+            if (aboutIntent.resolveActivity(getPackageManager()) != null) {
                 startActivity(aboutIntent);
             }
         });

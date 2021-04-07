@@ -19,15 +19,22 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText familyEditText;
     private EditText aboutEditText;
     private RadioGroup sexRadioGroup;
+    private Button backBtn;
+    private Button registerButton;
+    private CheckBox checkBoxCondition;
+
+    String emptyErrorText;
+    String tooShortErrorText;
+    String mismatchErrorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        CheckBox checkBoxCondition = findViewById(R.id.checkBoxCondition);
-        Button registerButton = findViewById(R.id.register_btn);
-        Button backBtn = findViewById(R.id.back_register);
+        checkBoxCondition = findViewById(R.id.checkBoxCondition);
+        registerButton = findViewById(R.id.register_btn);
+        backBtn = findViewById(R.id.back_register);
         loginEditText = findViewById(R.id.register_login);
         passEditText = findViewById(R.id.register_pass);
         checkPassEditText = findViewById(R.id.register_check_pass);
@@ -36,12 +43,22 @@ public class RegisterActivity extends AppCompatActivity {
         aboutEditText = findViewById(R.id.register_about);
         sexRadioGroup = findViewById(R.id.sex_choise);
 
+        emptyErrorText = getString(R.string.error_empty);
+        tooShortErrorText = getString(R.string.error_too_short);
+        mismatchErrorText = getString(R.string.error_pass_dont_match);
+
         checkBoxCondition.setOnClickListener(view -> registerButton.setEnabled(!registerButton.isEnabled()));
         registerButton.setOnClickListener(view -> sendIntent());
         backBtn.setOnClickListener(view -> finish());
     }
 
     private void sendIntent() {
+        loginEditText.setError(null);
+        passEditText.setError(null);
+        checkPassEditText.setError(null);
+        nameEditText.setError(null);
+        familyEditText.setError(null);
+
         boolean errors = false;
         String login = loginEditText.getText().toString().trim();
         String pass = passEditText.getText().toString().trim();
@@ -51,42 +68,37 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (login.isEmpty()) {
             errors = true;
-            loginEditText.setError(getString(R.string.error_empty));
-        } else {
-            if (login.length() < 4) {
-                errors = true;
-                loginEditText.setError(getString(R.string.error_too_short));
-            }
+            loginEditText.setError(emptyErrorText);
+        } else if (login.length() < 4) {
+            errors = true;
+            loginEditText.setError(tooShortErrorText);
         }
 
         if (pass.isEmpty()) {
             errors = true;
-            passEditText.setError(getString(R.string.error_empty));
-        } else {
-            if (pass.length() < 8) {
-                errors = true;
-                passEditText.setError(getString(R.string.error_too_short));
-            }
+            passEditText.setError(emptyErrorText);
+        } else if (pass.length() < 8) {
+            errors = true;
+            passEditText.setError(tooShortErrorText);
         }
 
-        if(checkPass.isEmpty()) {
+
+        if (checkPass.isEmpty()) {
             errors = true;
-            checkPassEditText.setError(getString(R.string.error_empty));
-        } else {
-            if (!pass.equals(checkPass)) {
-                errors = true;
-                checkPassEditText.setError(getString(R.string.error_pass_dont_match));
-            }
+            checkPassEditText.setError(emptyErrorText);
+        } else if (!pass.equals(checkPass)) {
+            errors = true;
+            checkPassEditText.setError(mismatchErrorText);
         }
 
         if (name.isEmpty()) {
             errors = true;
-            nameEditText.setError(getString(R.string.error_empty));
+            nameEditText.setError(emptyErrorText);
         }
 
         if (family.isEmpty()) {
             errors = true;
-            familyEditText.setError(getString(R.string.error_empty));
+            familyEditText.setError(emptyErrorText);
         }
 
         if (errors) {

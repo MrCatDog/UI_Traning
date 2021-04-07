@@ -16,24 +16,33 @@ public class InfoActivity extends AppCompatActivity {
     public static final String SEX = "sex";
     public static final String ABOUT = "about";
 
+    private Button backBtn;
+    private TextView about;
+    private TextView sex;
+    private TextView family;
+    private TextView name;
+    private TextView pass;
+    private TextView login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        TextView login = findViewById(R.id.info_login);
-        TextView pass = findViewById(R.id.info_pass);
-        TextView name = findViewById(R.id.info_name);
-        TextView family = findViewById(R.id.info_family);
-        TextView sex = findViewById(R.id.info_sex);
-        TextView about = findViewById(R.id.info_about);
-        Button backBtn = findViewById(R.id.back_info);
+        login = findViewById(R.id.info_login);
+        pass = findViewById(R.id.info_pass);
+        name = findViewById(R.id.info_name);
+        family = findViewById(R.id.info_family);
+        sex = findViewById(R.id.info_sex);
+        about = findViewById(R.id.info_about);
+        backBtn = findViewById(R.id.back_info);
 
         backBtn.setOnClickListener(view -> finish());
-        Intent intent = getIntent();
 
+        Intent intent = getIntent();
         login.append(intent.getStringExtra(LOGIN));
         pass.append(intent.getStringExtra(PASSWORD));
+
         if (intent.getStringExtra(NAME) != null) {
             name.append(intent.getStringExtra(NAME));
         }
